@@ -1,0 +1,69 @@
+package inheritance;
+
+class Car{
+	
+	private String carName;
+	private String carNo;
+	private String carOwnerName;
+	
+	
+	Car(String carName,String carNo,String carOwnerName){
+		this.carName=carName;
+		this.carNo=carNo;
+		this.carOwnerName=carOwnerName;
+		
+	}
+	
+	public String getcarName() {
+		return carName;
+	}
+	public void setcarName(String carName) {
+		this.carName=carName;
+	}
+	public String getcarNo() {
+		return carNo;
+	}
+	public void setcarNo(String carNo) {
+		this.carNo=carNo;
+	}
+	public String getcarOwnerName() {
+		return carOwnerName;
+	}
+	public void setcarOwnerName(String carOwnerName) {
+		this.carOwnerName=carOwnerName;
+	}
+	
+	public void displaycardetails() {
+		System.out.println("/*****************************************************/");
+		System.out.println("CAR NAME : "+carName);
+		System.out.println("CAR NO : "+carNo);
+		System.out.println("OWNER NAME : "+carOwnerName);
+	}
+
+}
+
+// inheritance method
+
+class Others extends Car{
+	
+	private long carOwnerNo;
+	
+	Others(String carName,String carNo,String carOwnerName,long carOwnerNo){
+		super(carName,carNo,carOwnerName);
+		this.carOwnerNo=carOwnerNo;
+	}
+	public long getcarOwnerNo() {
+		return carOwnerNo;
+	}
+	public void setcarOwnerNo(long carOwnerNo) {
+		this.carOwnerNo=carOwnerNo;
+	}
+}
+class testpc2{
+	public static void main(String[] args) {
+		
+		Others carDetail = new Others("SUZUKI BREEZA","TN 23 AB 1258","VIJAY",7010366616L);
+		carDetail.displaycardetails();
+		System.out.println("OWNER NO : "+carDetail.getcarOwnerNo());
+	}
+}
